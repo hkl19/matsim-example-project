@@ -28,6 +28,12 @@
 	</properties>
 
 	<repositories>
+			<!-- gtfs-lib depends on jackson2-geojson 0.8 only available at conveyal's repository -->
+		<repository>
+			<id>conveyal</id>
+			<name>Conveyal Maven Repository</name>
+			<url>https://maven.conveyal.com/</url>
+		</repository>
 	  <!--Note that in general repositories are not transitive, so they need to be repeated at every level where needed.-->
 		<repository>
 			<!-- Geotools is not on Maven central -->
@@ -60,6 +66,12 @@
 			<artifactId>matsim</artifactId>
 			<version>${matsim.version}</version>
 		</dependency>
+			<!-- Jackson2 fix -->
+		<dependency>
+			<groupId>com.conveyal</groupId>
+			<artifactId>jackson2-geojson</artifactId>
+			<version>0.8</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
@@ -88,6 +100,7 @@
 <!--			matsim-examples dependency into "test" scope if you want to make other projects dependent on your this project here. kai,-->
 <!--			jan'21-->
 		</dependency>
+
 
 		<!--some contribs:-->
 		<dependency>
